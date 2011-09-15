@@ -73,4 +73,4 @@ This keeps you, the developer, from being locked into a certain fallback method.
 
 Take a look at [Video for Everybody](http://camendesign.com/code/video_for_everybody). 
 
-Acorn Media Player is a project by [Ionut Cristian Colceriu](www.ghinda.net).
+Acorn Media Player is a project by [Ionut Cristian Colceriu](http://www.ghinda.net).
