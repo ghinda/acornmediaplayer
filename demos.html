@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />	
+	<title>Demos for Acorn Media Player, Accessible and customizable HTML5 media player</title>	
+	<link href="website/css/amp-demos.css" rel="stylesheet" type="text/css" />	
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.js"></script>
+	
+	<!-- Acorn Media Player specific -->
+	<link href="acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" type="text/css">
+	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>	
+	<!-- Themes -->
+	<link href="acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
+	<link href="acornmediaplayer/themes/darkglass/acorn.darkglass.css" rel="stylesheet" type="text/css">
+	<link href="acornmediaplayer/themes/barebones/acorn.barebones.css" rel="stylesheet" type="text/css">
+	<!-- Call the plugin --> 
+	<script>
+		jQuery(function() {
+			// demo1
+			jQuery('#demo1, #demo1-audio').acornMediaPlayer();
+			// demo2
+			jQuery('#demo2, #demo2-audio').acornMediaPlayer({
+				theme: 'access accesslight'
+			});
+			// demo3
+			jQuery('#demo3, #demo3-audio').acornMediaPlayer({
+				theme: 'darkglass',
+				volumeSlider: 'vertical'
+			});
+			// demo4
+			jQuery('#demo4, #demo4-audio').acornMediaPlayer({
+				theme: 'darkglass darkglasssmall',
+				volumeSlider: 'vertical'
+			});
+			// demo5
+			jQuery('#demo5, #demo5-audio').acornMediaPlayer({
+				theme: 'barebones'				
+			});
+			// demo6
+			jQuery('#demo6, #demo6-audio').acornMediaPlayer({
+				theme: 'barebones',
+				nativeSliders: true
+			});
+		});
+	</script>
+</head>
+<body>
+		
+
+	<h1>
+		Acorn Media Player
+		<p>jQuery Plugin</p>
+	</h1>
+	
+	<span class="version">Ver 1.5</span>
+	
+	<section>
+		<h2>Demos</h2>
+		
+		<h3>Defaults</h3>
+		
+		<figure>
+			<video controls="controls" width="826" height="352" id="demo1" preload="metadata" aria-describedby="full-descript">				
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.mp4" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.webm" />
+				
+				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
+				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
+				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
+				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
+				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
+				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
+				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
+				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
+				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				
+				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
+<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>
+			<audio id="demo1-audio" aria-describedby="demo1-audio-descript">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.mp3" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.ogg" />
+			</audio>
+			<figcaption id="demo1-audiodescript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>
+		
+		<p>This uses the default options, with the default 'access' theme. </p>
+		<p>Just include the theme CSS and call the plugin. </p>
+<pre><code>&lt;link href=&quot;/path/to/themes/access/acorn.access.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>
+
+<pre><code>jQuery('video').acornMediaPlayer();</code></pre>
+	</section>	
+	
+	<section>
+		<h3><code>accesslight </code> Child Theme</h3>
+		<figure>
+			<video controls="controls" width="826" height="352" id="demo2" preload="metadata" aria-describedby="demo2-description">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.mp4" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.webm" />
+				
+				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
+				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
+				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
+				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
+				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
+				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
+				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
+				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
+				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				
+				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+			</video>
+			<figcaption id="demo2-description">
+<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
+<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+			</figcaption>
+		</figure>
+
+		<figure>		
+			<audio id="demo2-audio" aria-describedby="demo2-audio-descript">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.mp3" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.ogg" />
+			</audio>
+			<figcaption id="demo2-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>		
+		
+		<p>Being a child theme of <code>access</code>, the styles for <code>accesslight</code> are included in the main theme's CSS. </p>
+<pre><code>&lt;link href=&quot;/path/to/themes/access/acorn.access.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>
+		<p>Now call the plugin with the <code>themes</code> option. </p>
+<pre><code>jQuery('video').acornMediaPlayer({
+	themes: 'access accesslight'
+});</code></pre>
+		
+	</section>
+	
+	<section>
+		<h3><code>Darkglass</code> theme and vertical volume slider</h3>
+		<figure>
+			<video controls="controls" width="826" height="352" id="demo3" preload="metadata" aria-describedby="demo3-description">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.mp4" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.webm" />
+				
+				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
+				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
+				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
+				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
+				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
+				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
+				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
+				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
+				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				
+				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+			</video>
+			<figcaption id="demo3-description">
+<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
+<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo3-audio" aria-describedby="demo3-audio-descript">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.mp3" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.ogg" />
+			</audio>
+			<figcaption id="demo3-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>
+		
+		<p><code>darkglass</code> only works properly with vertical volume sliders. </p>
+<pre><code>&lt;link href=&quot;/path/to/themes/darkglass/acorn.darkglass.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'darkglass',
+	volumeSlider: 'vertical'
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3><code>darkglasssmall</code> Child Theme</h3>
+		<figure>
+			<video controls="controls" width="826" height="352" id="demo4" preload="metadata" aria-describedby="demo4-description">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.mp4" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.webm" />
+				
+				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
+				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
+				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
+				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
+				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
+				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
+				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
+				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
+				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				
+				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+			</video>
+			<figcaption id="demo4-description">
+<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
+<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo4-audio" aria-describedby="demo4-audio-descript">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.mp3" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.ogg" />
+			</audio>
+			<figcaption id="demo4-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>		
+				
+<pre><code>&lt;link href=&quot;/path/to/themes/darkglass/acorn.darkglass.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'darkglass darkglasssmall',
+	volumeSlider: 'vertical'
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3><code>barebones</code> Theme</h3>
+		<figure>
+			<video controls="controls" width="826" height="352" id="demo5" preload="metadata" aria-describedby="demo5-description">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.mp4" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.webm" />
+				
+				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
+				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
+				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
+				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
+				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
+				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
+				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
+				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
+				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				
+				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+			</video>
+			<figcaption id="demo5-description">
+<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
+<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo5-audio" aria-describedby="demo5-audio-descript">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.mp3" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.ogg" />
+			</audio>
+			<figcaption id="demo5-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>			
+				
+<pre><code>&lt;link href=&quot;/path/to/themes/barebones/acorn.barebones.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'barebones'
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3><code>barebones</code> Theme with native sliders</h3>
+		<figure>
+			<video controls="controls" width="826" height="352" id="demo6" preload="metadata" aria-describedby="demo6-description">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.mp4" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.webm" />
+				
+				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
+				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
+				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
+				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
+				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
+				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
+				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
+				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
+				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				
+				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+			</video>
+			<figcaption id="demo6-description">
+<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
+<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo6-audio" aria-describedby="demo6-audio-descript">
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.mp3" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/ptburnem-gypsyheartrock.ogg" />
+			</audio>
+			<figcaption id="demo6-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>			
+				
+<pre><code>&lt;link href=&quot;/path/to/themes/barebones/acorn.barebones.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'barebones',
+	nativeSliders: true
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3>A word about the markup</h3>
+		<p>If you take a look at the source of these demos, you can see I'm using a Wikipedia-like style of marking-up both &lt;video&gt; and &lt;audio&gt;, using the HTML 5 elements &lt;figure&gt; and &lt;figcaption&gt;. </p>
+<pre><code>&lt;figure&gt;
+	&lt;video controls=&quot;controls&quot; aria-describedby=&quot;demo-description&quot;&gt;
+		&lt;source src=&quot;../media/sintel-2010-full.webm&quot; /&gt;
+		You can download Sintel at &lt;a href=&quot;www.sintel.org&quot;&gt;www.sintel.org&lt;/a&gt;.
+	&lt;/video&gt;
+	&lt;figcaption id=&quot;demo-description&quot;&gt;
+		&lt;p&gt;&quot;Sintel&quot; is an independently produced short film... &lt;/p&gt;
+		&lt;p&gt;&lt;a href=&quot;www.sintel.org&quot;&gt;www.sintel.org&lt;/a&gt;&lt;/p&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+		<p>You can also notice I'm "linking" the &lt;figure&gt; and &lt;figcaption&gt; using <code>aria-describedby</code>. </p>
+		<p>Using the <code>aria-describedby</code> attribute makes screen readers and other <abbr title="Assistive technology">AT</abbr> read/interpret the media element description <strong>first</strong>, before reaching the controls. </p>
+		<p>This goes for both the &lt;audio&gt; and &lt;video&gt;, and is done for accessibility and semantic markup. </p>
+		<p>You don't <strong>have</strong> to use this markup. A simple video or audio element will do. </p>
+	</section>
+	
+	<footer>		
+		<p>Acorn Media Player is a project by <a href="http://www.ghinda.net">Ionut Cristian Colceriu</a>. </p>
+		<p>Elephant's Dream is &copy; copyright the Blender Foundation | <a href="http://orange.blender.org/">orange.blender.org</a>, licensed under a <a href="http://orange.blender.org/blog/creative-commons-license-2/">Creative Commons</a> license. </p>
+	</footer>
+	
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-19824700-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>	
+	
+</body>
+</html>

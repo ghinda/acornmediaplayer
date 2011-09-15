@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />	
+	<title>Acorn Media Player, Accessible and customizable HTML5 media player</title>	
+	<link href="website/css/amp-page-base.css" rel="stylesheet" type="text/css" />	
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.js"></script>
+	
+	<!-- Acorn Media Player specific -->
+	<link href="acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" type="text/css">
+	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>	
+	<!-- Theme -->
+	<link href="acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
+	<!-- Call the plugin -->
+	<script>
+		jQuery(function() {
+			jQuery('video, audio').acornMediaPlayer();
+		});
+	</script>
+</head>
+<body>
+		
+
+	<h1>
+		Acorn Media Player
+		<p>jQuery Plugin</p>
+	</h1>
+	
+	<span class="version">Ver 1.5</span>
+	
+	<section>		
+		<figure>
+			<video controls="controls" width="826" height="352" preload="metadata" aria-describedby="full-descript">				
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.mp4" />
+				<source src="http://dl.dropbox.com/u/12274602/acornmedia/Elephants_Dream_320.webm" />
+				
+				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
+				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
+				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
+				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
+				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
+				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
+				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
+				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
+				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				
+				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
+<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+			</figcaption>
+		</figure>
+	</section>	
+	
+	<section id="demos">
+		<a href="demos.html" id="demo-button">See more demos</a>
+		<h2>Demos</h2>		
+	</section>
+	
+	<section id="download">
+		<a href="https://github.com/ghinda/acornmediaplayer" id="download-button">Download</a>
+		<h2>Download</h2>
+		<p>You can download the latest version from <a href="https://github.com/ghinda/acornmediaplayer">GitHub</a>. </p>
+	</section>
+	
+	<section id="about">
+		<h2>About</h2>
+		<p>Acorn Media Player is a jQuery plugin implementing a custom HTML5 &lt;video&gt; player with a special focus on accessiblity and customization. </p>
+		<p>It started as a proof-of-concept, for an article about <a href="http://dev.opera.com/articles/view/custom-html5-video-player-with-css3-and-jquery/">building a custom HTML5 video player with CSS3 and jQuery</a> on <a href="http://dev.opera.com">Dev.Opera.com</a>. </p>
+		<p></p>
+	</section>
+	
+	<section id="features">
+		<h2>Features</h2>
+		<ul>
+			<li>
+				<h3 class="access-icon">Accessiblity</h3>
+				<p>Acorn Media Player is built with accessibility in mind. </p>				
+				<p>It provides full keyboard control using standard tab-based navigation, screen-reader (and other <abbr title="Assistive Technologies">AT</abbr>) support, accessible themes, and other accessibility  tweaks. </p>
+			</li>
+			<li>
+				<h3 class="caption-icon">Closed-Captions</h3>
+				<p>This is yet no native support for closed captioning on HTML5 &lt;video&gt;, but that shouldn't stop you from providing them. </p>
+				<p>It supports external SRT files just like “real” media players. </p>
+			</li>
+			<li>
+				<h3 class="transcript-icon">Transcript</h3>
+				<p>Along with closed captions support, the player provides a dynamic transcript generated from the selected captions. </p>
+			</li>
+			<li>
+				<h3 class="fullscreen-icon">Other features</h3>
+				<p>Other notable features include:</p>
+				<ul>
+					<li>Easy customization and themeing</li>
+					<li>Fullscreen support</li>
+					<li>Buffering indicator</li>
+					<li>&lt;audio&gt; support</li>
+					<li>Loading indicator</li>
+					<li>Remembers volume level using HTML5 localStorage</li>
+					<li>Easy to use, understand and adapt</li>
+					<li>Free and Open Source</li>
+				</ul>
+			</li>
+		</ul>			
+	</section>	
+	
+	<section id="how">
+		<h2>How to use</h2>
+		
+		<h3>1. Mark-up your &lt;audio&gt; and &lt;video&gt;</h3>
+		<p>Properly mark-up your videos, <em>and make sure they work, without the player. </em> It's also a good time to consider <a href="#fallback">fallbacks</a>. </p>
+		
+		<h3>2. Include jQuery and jQuery UI Slider</h3>
+		<p>Since this is a jQuery plugin, you'll need to include jQuery. You can include it from Google's CDN. </p>
+<pre><code>&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+		<p>You don't have to include the whole jQuery UI, you'll only have to include the jQuery UI Slider component. You can <a href="#">create your own custom jQuery UI build</a> on the jQuery UI website.</p>
+<pre><code>&lt;script src=&quot;/path/to/jquery-ui-custom.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+		
+		<h3>3. Include specific JavaScript and CSS for Acorn Media Player</h3>
+		<p>You'll need to include one JavaScript file</p>
+<pre><code>&lt;script src=&quot;/path/to/jquery.acornmediaplayer.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+		<p>and one CSS file</p>
+<pre><code>&lt;link href=&quot;/path/to/acornmediaplayer.base.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+</code></pre>
+		
+		<h3>4. Include the Theme(s)</h3>
+		<p>The <code>base</code> CSS file you just included does not provide any themes. Themes are located in other external CSS files. </p>
+<pre><code>&lt;link href=&quot;/path/to/themes/acorn.theme.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+</code></pre>
+		<p>See the themes included by default in the <a href="#themes">Themes</a> section. </p>
+		
+		<h3>5. Call the plugin</h3>
+		<p>When you're done including everything, call the plugin on the elements you want using a jQuery selector. </p>
+<pre><code>&lt;script&gt;
+	$(document).ready(function() {
+		$('video, audio').acornMediaPlayer();
+	});
+&lt;/script&gt;
+</code></pre>
+		<p>This will initialize the player using the default options. See the available options bellow. </p>
+	</section>
+	
+	<section id="options">
+		<h2>Options</h2>
+		<p>These are the themes included with the playe: </p>
+		<table>
+				<thead>
+					<tr>
+						<th class="small-column">Key</td>
+						<th class="small-column">Default value</td>
+						<th>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>theme</td>
+						<td>'access'</td>
+						<td>
+							<p>Theme to be used by media player. The value is added as an extra class to the gallery wrapper.  </p>
+							<p>You can also provide mutiple values (just like adding multiple classes to an element). Some themes provide child themes, which build on, or modify the main theme. So, if you want to use 'accesslight', a child theme of 'access' you'll have to use 'access accesslight'. </p>
+							<p><strong>Remember to include the theme. </strong></p>
+						</td>
+					</tr>					
+					<tr>
+						<td>nativeSliders</td>
+						<td>false</td>
+						<td>
+							<p>More of an experimental feature. Whether or not to use &lt;input type=&quot;range&quot;&gt; controls instead of jQuery UI sliders, for the seek and volume slider. </p>
+							<p>Can be <code>true</code> or <code>false</code>.</p>
+						</td>
+					</tr>
+					<tr>
+						<td>volumeSlider</td>
+						<td>'horizontal'</td>
+						<td>
+							<p>The direction of the volume slider, to be used with the jQuery UI Slider. </p>
+							<p>Can be <code>horizontal</code> or <code>vertical</code>. </p>
+						</td>
+					</tr>
+					<tr>
+						<td>captionsOn</td>
+						<td>false</td>
+						<td>
+							<p>If true, the first caption will be selected by default. </p>
+							<p>Can be <code>true</code> or <code>false</code>. </p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+	</section>
+	
+	<section id="themes">
+		<h2>Themes</h2>
+		<p>These are the themes included with the player: </p>
+		<ul>
+			<li>
+				<strong>access(default theme)</strong>
+				<p>Includes child theme <code>accesslight</code></p>
+			</li>
+			<li>
+				<strong>darkglass</strong>
+				<p>Includes child theme <code>darkglasssmall</code></p>
+			</li>
+			<li>
+				<strong>barebones</strong>
+			</li>
+		</ul>
+	</section>
+	
+	<section id="participate">
+		<h2>Participate</h2>
+		<p>Please report any issues you may have using the GitHub issue tracker, and I'll do my best to fix them asap. Also, feel free to fork the project, I'll be glad to add back any improvements. </p>
+		<p>You can also email me directly at <a href="mailto:contact@ghinda.net">contact@ghinda.net</a>. </p>
+	</section>
+	
+	<section id="license">
+		<h2>License</h2>
+		<p>I know <cite>"copyright is for losers"</cite>, but the media player is dual-licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GPL</a> and <a href="http://www.opensource.org/licenses/mit-license.html">MIT</a> licenses. You can use it under whichever of these suits you. </p>
+	</section>	
+	
+	<section id="fallback">
+		<h2>Fallback?</h2>
+		<p>Acorn Media Player does not provide any fallback for browsers that are old, or don't support the provided video format. </p>
+		<p>This keeps you, the developer, from being locked into a certain fallback method. Most "other" video implementations(Flash, Silverlight, Java) have a lot of accessibility issues, so I'm not going to choose sides. Also, this way you can do things the way you want, and even if you later decide that you don't want to use this media player, your markup will stay the same and the fallback mechanism you chose will still work. </p>
+		<p>If I were you, I'd take a look at <a href="http://camendesign.com/code/video_for_everybody">Video for Everybody</a>. </p>
+	</section>
+				
+	<footer>
+		<p>See the <a href="demos.html">Acorn Media Player Demos</a> page. </p>
+		<p>Acorn Media Player is a project by <a href="http://www.ghinda.net">Ionut Cristian Colceriu</a>. </p>
+		<p>Elephant's Dream is &copy; copyright the Blender Foundation | <a href="http://orange.blender.org/">orange.blender.org</a>, licensed under a <a href="http://orange.blender.org/blog/creative-commons-license-2/">Creative Commons</a> license. </p>
+	</footer>
+	
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-19824700-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	
+</body>
+</html>
