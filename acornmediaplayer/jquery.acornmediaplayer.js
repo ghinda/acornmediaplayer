@@ -419,13 +419,14 @@
 					
 					// manully blur the Caption Button when clicking the handle
 					$('.ui-slider-handle', acorn.$seek).click(blurCaptionBtn);
+					
+					// show buffering progress on progress
+					acorn.$self.bind('progress', showBuffer);
 				}
 				
 				// remove the loading element
 				acorn.$self.next('.loading-media').remove();
 				
-				// show buffering progress on progress
-				acorn.$self.bind('progress', showBuffer);
 			};
 			
 			/*
