@@ -1,7 +1,7 @@
 /*
  * Acorn Media Player - jQuery plugin 1.5
  *
- * Copyright (C) 2011 Ionut Cristian Colceriu
+ * Copyright (C) 2012 Ionut Cristian Colceriu
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -121,7 +121,7 @@
 			/*
 			 * Complete markup
 			 */
-			var template = '<div class="acorn-controls" style="display: none;">' +
+			var template = '<div class="acorn-controls">' +
 								'<button class="acorn-play-button" title="' + text.playTitle + '" aria-controls="' + acorn.id + '">' + text.play + '</button>' +
 								'<input type="range" class="acorn-seek-slider" title="' + text.seekTitle + '" value="0" min="0" max="150" step="0.1" aria-controls="' + acorn.id + '"/>' +
 								'<span class="acorn-timer">00:00</span>' +
@@ -141,7 +141,7 @@
 			/*
 			 * Append the HTML markup
 			 */
-			acorn.$self.wrap($wrapper).after(template);
+			acorn.$self.wrap($wrapper).after(template).after('<div class="loading-media"></div>');
 		
 			/*
 			 * Define the newly created DOM nodes
@@ -345,10 +345,46 @@
 			};
 			
 			/*
-			 * Seek slider initialization
-			 * Attach events, add the "duration" attribute and generate the jQuery UI Seek Slider
+			 * Init jQuery UI slider
 			 */
 			var initSeek = function() {
+				
+				// get existing classes
+				var seekClass = acorn.$seek.attr('class');
+				
+				// create the new markup
+				var	divSeek = '<div class="' + seekClass + '" title="' + text.seekTitle + '"></div>';
+				acorn.$seek.after(divSeek).remove();
+				
+				// get the newly created DOM node
+				acorn.$seek = $('.' + seekClass, acorn.$container);
+				
+				// create the buffer element
+				var bufferBar = '<div class="ui-slider-range acorn-buffer"></div>';
+				acorn.$seek.append(bufferBar);
+				
+				// get the buffer element DOM node
+				acorn.$buffer = $('.acorn-buffer', acorn.$container);					
+				
+				// set up the slider options for the jQuery UI slider
+				var sliderOptions = {
+					value: 0,
+					step: 1,
+					orientation: 'horizontal',
+					range: 'min',
+					min: 0,
+					max: 100
+				}; 
+				// init the jQuery UI slider
+				acorn.$seek.slider(sliderOptions);
+			
+			};
+			 
+			/*
+			 * Seek slider update, after metadata is loaded
+			 * Attach events, add the "duration" attribute and generate the jQuery UI Seek Slider
+			 */
+			var updateSeek = function() {
 				// Get the duration of the media
 				var duration = acorn.$self[0].duration;			
 				
@@ -361,36 +397,20 @@
 					acorn.$seek.bind('mouseup', endSeek);
 					
 				} else {
-					// get existing classes
-					var seekClass = acorn.$seek.attr('class');
-					
-					// create the new markup
-					var	divSeek = '<div class="' + seekClass + '" title="' + text.seekTitle + '"></div>';
-					acorn.$seek.after(divSeek).remove();
-					
-					// get the newly created DOM node
-					acorn.$seek = $('.' + seekClass, acorn.$container);
-					
-					// create the buffer element
-					var bufferBar = '<div class="ui-slider-range acorn-buffer"></div>';
-					acorn.$seek.append(bufferBar);
-					
-					// get the buffer element DOM node
-					acorn.$buffer = $('.acorn-buffer', acorn.$container);					
 					
 					// set up the slider options for the jQuery UI slider
 					var sliderOptions = {
 						value: 0,
 						step: 1,
-						orientation: "horizontal",
-						range: "min",
+						orientation: 'horizontal',
+						range: 'min',
 						min: 0,
 						max: duration,
 						slide: startSeek,
 						stop: endSeek
 					}; 
 					// init the jQuery UI slider
-					acorn.$seek.slider(sliderOptions);
+					acorn.$seek.slider('option', sliderOptions);
 					
 					// add valuetext value to the slider options for better ARIA values
 					sliderOptions.valuetext = ariaTimeFormat(sliderOptions.value);
@@ -400,11 +420,9 @@
 					// manully blur the Caption Button when clicking the handle
 					$('.ui-slider-handle', acorn.$seek).click(blurCaptionBtn);
 				}
-				// show the player's controls
-				acorn.$controls.show();
 				
-				// remove the loading class
-				acorn.$self.removeClass('loading-media');
+				// remove the loading element
+				acorn.$self.next('.loading-media').remove();
 				
 				// show buffering progress on progress
 				acorn.$self.bind('progress', showBuffer);
@@ -865,8 +883,10 @@
 				// initialize volume controls
 				initVolume();				
 				
-				// remove the loading class
-				acorn.$self.addClass('loading-media');
+				// add the loading class
+				$wrapper.addClass('');
+				
+				if(!options.nativeSliders) initSeek();
 				
 				// once the metadata has loaded
 				acorn.$self.bind('loadedmetadata', function() {					
@@ -876,7 +896,7 @@
 					 */
 					var t = window.setInterval(function() {
 								if (acorn.$self[0].readyState > 0) {									
-									initSeek();
+									updateSeek();
 									
 									clearInterval(t);
 								}
@@ -887,9 +907,6 @@
 								
 				// remove the native controls
 				acorn.$self.removeAttr('controls');
-				
-				// add the loading class
-				acorn.$self.addClass('loading-media');
 				
 				if(acorn.$self.is('audio')) {
 					/*

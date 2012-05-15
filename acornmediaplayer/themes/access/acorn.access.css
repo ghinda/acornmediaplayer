@@ -43,6 +43,7 @@
 /* <button>s */
 .acorn-player.access button {
 	position: relative;	
+	margin: 0;
 	padding-left: 25px;
 	height: 35px;
 	border: 1px solid #333;
