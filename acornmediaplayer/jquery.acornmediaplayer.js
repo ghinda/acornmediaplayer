@@ -889,12 +889,19 @@
 				
 				if(!options.nativeSliders) initSeek();
 				
+				acorn.$self[0].load();
+				acorn.$self[0].play();
+				
 				// once the metadata has loaded
-				acorn.$self.bind('loadedmetadata', function() {					
+				/*
+				acorn.$self.bind('loadedmetadata', function() {
 					/* I use an interval to make sure the video has the right readyState
 					 * to bypass a known webkit bug that causes loadedmetadata to be triggered
 					 * before the duration is available
-					 */
+					 *
+					 
+					alert('canplay');
+					 
 					var t = window.setInterval(function() {
 								if (acorn.$self[0].readyState > 0) {									
 									updateSeek();
@@ -904,8 +911,23 @@
 							}, 500);
 					
 					initCaption();					
-				});				
+				});
+				*/
+
+				
+				var t = window.setInterval(function() {
+							if (acorn.$self[0].seekable.length > 0) {									
+								updateSeek();
 								
+								clearInterval(t);
+							}
+						}, 500);
+				
+			
+				initCaption();
+				
+				//updateSeek();
+				
 				// remove the native controls
 				acorn.$self.removeAttr('controls');
 				
