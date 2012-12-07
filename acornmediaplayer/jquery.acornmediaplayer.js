@@ -21,7 +21,8 @@
 			theme: 'access',
 			nativeSliders: false,
 			volumeSlider: 'horizontal',
-			captionsOn: false
+			captionsOn: false,
+			tooltipsOn: true
 		};
 		options = $.extend(defaults, options);
 		
@@ -122,6 +123,12 @@
 			 */
 			var fullscreenBtnMarkup = (acorn.$self.is('video')) ? '<button class="acorn-fullscreen-button" title="' + text.fullscreenTitle + '" aria-controls="' + acorn.id + '">' + text.fullscreen + '</button>' : '';
 			
+			/* 
+			 * Markup for player tooltips
+			 * If tooltips are not required we leave it blank
+			 */
+			var tooltipMarkup = (options.tooltipsOn) ? '<div class="acorn-tooltip"><div>' : '';
+
 			/*
 			 * Complete markup
 			 */
@@ -137,7 +144,8 @@
 								'<button class="acorn-caption-button" title="' + text.captionsTitle + '"  aria-controls="' + acorn.id + '">' + text.captions + '</button>' +
 								'<div class="acorn-caption-selector"></div>' +
 								'<button class="acorn-transcript-button" title="' + text.transcriptTitle + '">' + text.transcript + '</button>' +
-							'</div>';
+							'</div>' +
+							tooltipMarkup;
 
 			var captionMarkup = '<div class="acorn-caption"></div>';
 			var transcriptMarkup = '<div class="acorn-transcript" role="region" aria-live="assertive"></div>';				
@@ -171,8 +179,9 @@
 			acorn.$timer = $('.acorn-timer', acorn.$container);
 			acorn.$volume = $('.acorn-volume-slider', acorn.$container);
 			acorn.$volumeBtn = $('.acorn-volume-button', acorn.$container);
-			acorn.$fullscreenBtn = $('.acorn-fullscreen-button', acorn.$container);				
-			
+			acorn.$fullscreenBtn = $('.acorn-fullscreen-button', acorn.$container);
+            acorn.$tooltip = $('.acorn-tooltip', acorn.$container);
+
 			/*
 			 * Append the markup for the Captions and Transcript
 			 * and define newly created DOM nodes for these
@@ -627,7 +636,25 @@
 					fullscreenMode = true;
 					
 				}
-			};	
+			};
+
+			/* 
+             * Tooltip Controls
+             * 
+             * Show/Hide tooltip for all buttons with title attribute
+             */
+            var showTooltip = function(e) {
+                if($(this).attr('title')){
+                    acorn.$tooltip.html($(this).attr('title')).css({'opacity':0}).show().stop().animate({'opacity':1}, 300);
+                }
+            }
+            var hideTooltip = function(e) {
+                if($(this).attr('title')){
+                    acorn.$tooltip.html($(this).attr('title')).stop().animate({'opacity':0}, 300, function(){
+                        acorn.$tooltip.hide().html("");
+                    });
+                }
+            }
 			
 			/* 
 			 * CAPTIONS Behaviour
@@ -898,6 +925,11 @@
 				
 				// bind Fullscreen Button
 				acorn.$fullscreenBtn.click(goFullscreen);
+
+				// bind Tooltip Events
+                if(options.tooltipsOn){
+                    acorn.$controls.find('button').mouseover(showTooltip).mouseout(hideTooltip);
+                }
 				
 				// initialize volume controls
 				initVolume();				

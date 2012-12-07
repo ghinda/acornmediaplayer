@@ -203,6 +203,31 @@
 .acorn-player.access .fullscreen-controls .acorn-fullscreen-button {
 	background-image: url(access-exit-fullscreen.png), url(button-background-dark.png);
 }
+/* Tooltip */
+.acorn-player.access .acorn-tooltip {
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 10px;
+	background: rgba(70, 70, 70, 0.7);
+	
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0px -1px 1px #000;
+
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-transition: none 0.3s ease-out;
+	-moz-transition: none 0.3s ease-out;
+	-o-transition: none 0.3s ease-out;
+	transition: none 0.3s ease-out;
+	z-index: 9999;
+}
 /* Caption Button */
 .acorn-player.access .acorn-caption-button {
 	float: right;

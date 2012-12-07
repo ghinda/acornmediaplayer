@@ -122,6 +122,19 @@
 	left: 0px;
 	bottom: 0px;
 }
+/* Tooltip */
+.acorn-player.barebones .acorn-tooltip {
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding:5px;
+	background: #fff;
+	
+	font-size: 12px;
+	color: #000;
+	z-index: 9999;
+}
 /* Caption Button */
 .acorn-player.barebones .acorn-caption-button {
 	float: right;
