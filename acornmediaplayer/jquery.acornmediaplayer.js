@@ -1,5 +1,5 @@
 /*
- * Acorn Media Player - jQuery plugin 1.6
+ * Acorn Media Player - jQuery plugin 1.7
  *
  * Copyright (C) 2012 Ionut Cristian Colceriu
  *
@@ -9,6 +9,10 @@
  *
  * www.ghinda.net
  * contact@ghinda.net
+ *
+ * Contributors:
+ * Steve Oldham - https://github.com/stephenoldham
+ *
  *
  */
 

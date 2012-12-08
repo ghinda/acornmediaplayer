@@ -1,8 +1,8 @@
 /*
- * Acorn Media Player - jQuery plugin 1.0
+ * Acorn Media Player - jQuery plugin 1.7
  * Styles for main web page
  *
- * Copyright (C) 2010 Cristian I. Colceriu
+ * Copyright (C) 2012 Cristian I. Colceriu
  *
  * Some styles borrowed from camendesign.com
  */
@@ -79,6 +79,18 @@ figcaption {
 	color: #D8C5AB;
 	font-size: 90%;
 }
+
+.column-50 {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
+
+.contributors-link {
+	font-size: 50%;
+	text-shadow: none;
+}
+
 /* features section */
 #features h2 {
 	margin-bottom: 0px;

@@ -35,7 +35,7 @@ Other notable features include:
 
 How to use
 ----------
-1. Mark-up your <audio> and <video>
+1. Mark-up your &lt;audio&gt; and &lt;video&gt;
 2. Include jQuery and jQuery UI Slider
 3. Include specific JavaScript and CSS for Acorn Media Player
 4. Include the Theme(s)
@@ -54,6 +54,13 @@ These are the themes included with the player:
   Includes child theme darkglasssmall
   
 * barebones
+
+
+Contributors
+------------
+
+* [Steve Oldham](https://github.com/stephenoldham)
+
 
 Participate
 -----------
