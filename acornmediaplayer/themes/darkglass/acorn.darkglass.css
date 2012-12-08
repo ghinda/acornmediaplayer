@@ -270,6 +270,37 @@
 .acorn-player.darkglass .fullscreen-controls .acorn-seek-slider {
 	margin-top: 10px;
 }
+/* Tooltip */
+.acorn-player.darkglass .acorn-tooltip {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 10px;
+	background: #000;
+	
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	z-index: 9999;
+
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+}
+.acorn-player.darkglass .acorn-tooltip.show-tooltip{
+	opacity: 1;
+	visibility: visible;
+}
 /* Caption Button */
 .acorn-player.darkglass .acorn-caption-button {
 	float: right;
