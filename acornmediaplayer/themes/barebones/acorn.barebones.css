@@ -124,7 +124,6 @@
 }
 /* Tooltip */
 .acorn-player.barebones .acorn-tooltip {
-	display: none;
 	position: absolute;
 	top: 20px;
 	right: 20px;
@@ -134,6 +133,17 @@
 	font-size: 12px;
 	color: #000;
 	z-index: 9999;
+
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+}
+.acorn-player.barebones .acorn-tooltip.show-tooltip{
+	opacity: 1;
+	visibility: visible;
 }
 /* Caption Button */
 .acorn-player.barebones .acorn-caption-button {

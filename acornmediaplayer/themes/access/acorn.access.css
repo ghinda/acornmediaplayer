@@ -205,7 +205,6 @@
 }
 /* Tooltip */
 .acorn-player.access .acorn-tooltip {
-	display: none;
 	position: absolute;
 	top: 20px;
 	right: 20px;
@@ -222,11 +221,19 @@
 	-moz-background-clip: padding;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
-	-webkit-transition: none 0.3s ease-out;
-	-moz-transition: none 0.3s ease-out;
-	-o-transition: none 0.3s ease-out;
-	transition: none 0.3s ease-out;
 	z-index: 9999;
+	
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.acorn-player.access .acorn-tooltip.show-tooltip{
+	opacity: 1;
+	visibility: visible;
 }
 /* Caption Button */
 .acorn-player.access .acorn-caption-button {

@@ -645,14 +645,12 @@
              */
             var showTooltip = function(e) {
                 if($(this).attr('title')){
-                    acorn.$tooltip.html($(this).attr('title')).css({'opacity':0}).show().stop().animate({'opacity':1}, 300);
+                    acorn.$tooltip.html($(this).attr('title')).addClass('show-tooltip');
                 }
             }
             var hideTooltip = function(e) {
                 if($(this).attr('title')){
-                    acorn.$tooltip.html($(this).attr('title')).stop().animate({'opacity':0}, 300, function(){
-                        acorn.$tooltip.hide().html("");
-                    });
+                    acorn.$tooltip.removeClass('show-tooltip');
                 }
             }
 			
