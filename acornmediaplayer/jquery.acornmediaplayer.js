@@ -73,6 +73,7 @@
 				$self: $(this)
 			};
 			
+			var loadedMetadata; // Is the metadata loaded
 			var seeking; // The user is seeking the media
 			var wasPlaying; // Media was playing when the seeking started
 			var fullscreenMode; // The media is in fullscreen mode
@@ -243,6 +244,9 @@
 			var startPlayback = function() {
 				acorn.$playBtn.text(text.pause).attr('title', text.pauseTitle);
 				acorn.$playBtn.addClass('acorn-paused-button');
+				
+				// if the metadata is not loaded yet, add the loading class
+				if(!loadedMetadata) $wrapper.addClass('show-loading');
 			};
 			
 			var stopPlayback = function() {
@@ -456,7 +460,7 @@
 				}
 				
 				// remove the loading element
-				acorn.$self.next('.loading-media').remove();
+				$wrapper.removeClass('show-loading');
 				
 			};
 			
@@ -603,6 +607,8 @@
 				if(fullscreenMode) {
 					if(acorn.$self[0].webkitSupportsFullscreen) {
 						acorn.$self[0].webkitExitFullScreen();
+					} else if(acorn.$self[0].mozRequestFullScreen) {
+							acorn.$self[0].mozRequestFullScreen();
 					} else {
 						$('body').css('overflow', 'auto');
 					
@@ -934,10 +940,7 @@
                 }
 				
 				// initialize volume controls
-				initVolume();				
-				
-				// add the loading class
-				$wrapper.addClass('');
+				initVolume();
 				
 				if(!options.nativeSliders) initSeek();
 				
@@ -947,9 +950,9 @@
 					 * to bypass a known webkit bug that causes loadedmetadata to be triggered
 					 * before the duration is available
 					 */
-					 
 					var t = window.setInterval(function() {
-								if (acorn.$self[0].readyState > 0) {									
+								if (acorn.$self[0].readyState > 0) {
+									loadedMetadata = true;
 									updateSeek();
 									
 									clearInterval(t);
@@ -960,7 +963,7 @@
 				});
 			
 				// trigger update seek manualy for the first time, for iOS support
-				updateSeek();
+				//updateSeek();
 				
 				// remove the native controls
 				acorn.$self.removeAttr('controls');

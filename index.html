@@ -4,20 +4,11 @@
 	<meta charset="utf-8" />	
 	<title>Acorn Media Player, Accessible and customizable HTML5 media player</title>	
 	<link href="website/css/amp-page-base.css" rel="stylesheet" type="text/css" />	
-	<script src="jquery/jquery.js"></script>
-	<script src="jquery/jquery-ui.js"></script>
 	
 	<!-- Acorn Media Player specific -->
 	<link href="acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" type="text/css">
-	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>	
 	<!-- Theme -->
 	<link href="acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
-	<!-- Call the plugin -->
-	<script>
-		jQuery(function() {
-			jQuery('video, audio').acornMediaPlayer();
-		});
-	</script>
 </head>
 <body>
 		
@@ -27,32 +18,28 @@
 		<p>jQuery Plugin</p>
 	</h1>
 	
-	<span class="version">Ver 1.7</span>
+	<span class="version">Ver 1.8</span>
 	
-	<section>		
+	<section>
 		<figure>
-			<video controls="controls" width="826" height="352" preload="metadata" aria-describedby="full-descript">
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.mp4" />
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.webm" />
+			<video controls="controls" width="826" height="330" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
+				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
+				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
 				
-				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
-				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
-				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
-				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
-				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
-				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
-				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
-				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
-				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
+				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
+				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
+				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
+				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
+				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
 				
-				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
+				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
 			</video>
 			<figcaption id="full-descript">
-<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
-<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
+				<p><em>"Tears of Steel"</em> was realized with crowd-funding by users of the open source 3D creation tool <a href="http://www.blender.org">Blender</a>. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. </p>
+				<p>(CC) Blender Foundation - <a href="http://www.tearsofsteel.org">http://www.tearsofsteel.org</a></p>
 			</figcaption>
 		</figure>
-	</section>	
+	</section>
 	
 	<section id="demos">
 		<a href="demos.html" id="demo-button">See more demos</a>
@@ -253,10 +240,22 @@
 	<footer>
 		<p>See the <a href="demos.html">Acorn Media Player Demos</a> page. </p>
 		<p>Acorn Media Player is a project by <a href="http://www.ghinda.net">Ionut Cristian Colceriu</a>. </p>
-		<p>Elephant's Dream is &copy; copyright the Blender Foundation | <a href="http://orange.blender.org/">orange.blender.org</a>, licensed under a <a href="http://orange.blender.org/blog/creative-commons-license-2/">Creative Commons</a> license. </p>
+		<p>Tears of Steel is &copy; copyright the Blender Foundation | <a href="http://www.tearsofsteel.org">www.tearsofsteel.org</a>, licensed under a <a href="http://mango.blender.org/sharing/">Creative Commons</a> license. </p>
 	</footer>
 
-<script>var _gaq=[['_setAccount','UA-19824700-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+	<script src="jquery/jquery.min.js"></script>
+	<script src="jquery/jquery-ui-1.10.0.custom.min.js"></script>
+	
+	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>	
+	
+	<!-- Call the plugin -->
+	<script>
+		jQuery(function() {
+			jQuery('video, audio').acornMediaPlayer();
+		});
+	</script>
+		
+	<script>var _gaq=[['_setAccount','UA-19824700-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 	
 </body>
 </html>

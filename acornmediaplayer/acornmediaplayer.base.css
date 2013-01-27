@@ -26,6 +26,8 @@
 }
 /* <video> */
 .acorn-player video {
+	position: relative;
+	z-index: 1;
 	background-color: #000;
 }
 /* <audio> */
@@ -134,14 +136,20 @@
 	z-index: 100000 !important;
 }
 /* Loading */
+.show-loading .loading-media {
+	visibility: visible;
+}
 .loading-media {
+	visibility: hidden;
+	
 	position: absolute;
 	left: 50%;
 	top: 50%;
+	z-index: 11; 
 	width: 20px;
 	height: 20px;
 	margin-top: -10px;
-	margin-lefT: -10px;
+	margin-left: -10px;
 	
 	background-color: #000;
 	border: 5px solid #fff;
@@ -177,8 +185,8 @@
 }
 
 /* Controls overlay while loading */
-.loading-media + .acorn-controls:before {
-	content: '';
+.show-loading:after {
+	content: ' ';
 	position: absolute;
 	top: -2px; /* Slider handle goes above */
 	padding-bottom: 2px;

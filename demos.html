@@ -4,16 +4,297 @@
 	<meta charset="utf-8" />	
 	<title>Demos for Acorn Media Player, Accessible and customizable HTML5 media player</title>	
 	<link href="website/css/amp-demos.css" rel="stylesheet" type="text/css" />	
-	<script src="jquery/jquery.js"></script>
-	<script src="jquery/jquery-ui.js"></script>
 	
 	<!-- Acorn Media Player specific -->
 	<link href="acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" type="text/css">
-	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>	
 	<!-- Themes -->
 	<link href="acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
 	<link href="acornmediaplayer/themes/darkglass/acorn.darkglass.css" rel="stylesheet" type="text/css">
 	<link href="acornmediaplayer/themes/barebones/acorn.barebones.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+		
+
+	<h1>
+		Acorn Media Player
+		<p>jQuery Plugin</p>
+	</h1>
+	
+	<span class="version">Ver 1.8</span>
+	
+	<section>
+		<h2>Demos</h2>
+		
+		<h3>Defaults</h3>
+		
+		<figure>
+			<video id="demo1" controls="controls" width="826" height="330" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
+				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
+				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
+				
+				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
+				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
+				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
+				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
+				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
+				
+				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+				<p><em>"Tears of Steel"</em> was realized with crowd-funding by users of the open source 3D creation tool <a href="http://www.blender.org">Blender</a>. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. </p>
+				<p>(CC) Blender Foundation - <a href="http://www.tearsofsteel.org">http://www.tearsofsteel.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>
+			<audio id="demo1-audio" aria-describedby="demo1-audio-descript">
+				<source type="audio/ogg" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.ogg" />
+				<source type="audio/mp3" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.mp3" />
+			</audio>
+			<figcaption id="demo1-audiodescript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>
+		
+		<p>This uses the default options, with the default 'access' theme. </p>
+		<p>Just include the theme CSS and call the plugin. </p>
+<pre><code>&lt;link href=&quot;/path/to/themes/access/acorn.access.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>
+
+<pre><code>jQuery('video').acornMediaPlayer();</code></pre>
+	</section>	
+	
+	<section>
+		<h3><code>accesslight </code> Child Theme</h3>
+		
+		<figure>
+			<video id="demo2" controls="controls" width="826" height="330" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
+				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
+				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
+				
+				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
+				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
+				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
+				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
+				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
+				
+				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+				<p><em>"Tears of Steel"</em> was realized with crowd-funding by users of the open source 3D creation tool <a href="http://www.blender.org">Blender</a>. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. </p>
+				<p>(CC) Blender Foundation - <a href="http://www.tearsofsteel.org">http://www.tearsofsteel.org</a></p>
+			</figcaption>
+		</figure>
+
+		<figure>		
+			<audio id="demo2-audio" aria-describedby="demo2-audio-descript">
+				<source type="audio/ogg" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.ogg" />
+				<source type="audio/mp3" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.mp3" />
+			</audio>
+			<figcaption id="demo2-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>		
+		
+		<p>Being a child theme of <code>access</code>, the styles for <code>accesslight</code> are included in the main theme's CSS. </p>
+<pre><code>&lt;link href=&quot;/path/to/themes/access/acorn.access.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>
+		<p>Now call the plugin with the <code>themes</code> option. </p>
+<pre><code>jQuery('video').acornMediaPlayer({
+	themes: 'access accesslight'
+});</code></pre>
+		
+	</section>
+	
+	<section>
+		<h3><code>Darkglass</code> theme and vertical volume slider</h3>
+		
+		<figure>
+			<video id="demo3" controls="controls" width="826" height="330" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
+				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
+				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
+				
+				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
+				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
+				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
+				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
+				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
+				
+				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+				<p><em>"Tears of Steel"</em> was realized with crowd-funding by users of the open source 3D creation tool <a href="http://www.blender.org">Blender</a>. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. </p>
+				<p>(CC) Blender Foundation - <a href="http://www.tearsofsteel.org">http://www.tearsofsteel.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo3-audio" aria-describedby="demo3-audio-descript">
+				<source type="audio/ogg" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.ogg" />
+				<source type="audio/mp3" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.mp3" />
+			</audio>
+			<figcaption id="demo3-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>
+		
+		<p><code>darkglass</code> only works properly with vertical volume sliders. </p>
+<pre><code>&lt;link href=&quot;/path/to/themes/darkglass/acorn.darkglass.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'darkglass',
+	volumeSlider: 'vertical'
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3><code>darkglasssmall</code> Child Theme</h3>
+		
+		<figure>
+			<video id="demo4" controls="controls" width="826" height="330" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
+				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
+				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
+				
+				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
+				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
+				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
+				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
+				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
+				
+				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+				<p><em>"Tears of Steel"</em> was realized with crowd-funding by users of the open source 3D creation tool <a href="http://www.blender.org">Blender</a>. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. </p>
+				<p>(CC) Blender Foundation - <a href="http://www.tearsofsteel.org">http://www.tearsofsteel.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo4-audio" aria-describedby="demo4-audio-descript">
+				<source type="audio/ogg" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.ogg" />
+				<source type="audio/mp3" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.mp3" />
+			</audio>
+			<figcaption id="demo4-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>		
+				
+<pre><code>&lt;link href=&quot;/path/to/themes/darkglass/acorn.darkglass.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'darkglass darkglasssmall',
+	volumeSlider: 'vertical'
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3><code>barebones</code> Theme</h3>
+		
+		<figure>
+			<video id="demo5" controls="controls" width="826" height="330" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
+				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
+				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
+				
+				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
+				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
+				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
+				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
+				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
+				
+				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+				<p><em>"Tears of Steel"</em> was realized with crowd-funding by users of the open source 3D creation tool <a href="http://www.blender.org">Blender</a>. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. </p>
+				<p>(CC) Blender Foundation - <a href="http://www.tearsofsteel.org">http://www.tearsofsteel.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo5-audio" aria-describedby="demo5-audio-descript">
+				<source type="audio/ogg" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.ogg" />
+				<source type="audio/mp3" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.mp3" />
+			</audio>
+			<figcaption id="demo5-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>			
+				
+<pre><code>&lt;link href=&quot;/path/to/themes/barebones/acorn.barebones.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'barebones'
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3><code>barebones</code> Theme with native sliders</h3>
+		
+		<figure>
+			<video id="demo6" controls="controls" width="826" height="330" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
+				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
+				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
+				
+				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
+				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
+				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
+				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
+				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
+				
+				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
+			</video>
+			<figcaption id="full-descript">
+				<p><em>"Tears of Steel"</em> was realized with crowd-funding by users of the open source 3D creation tool <a href="http://www.blender.org">Blender</a>. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. </p>
+				<p>(CC) Blender Foundation - <a href="http://www.tearsofsteel.org">http://www.tearsofsteel.org</a></p>
+			</figcaption>
+		</figure>
+		
+		<figure>		
+			<audio id="demo6-audio" aria-describedby="demo6-audio-descript">
+				<source type="audio/ogg" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.ogg" />
+				<source type="audio/mp3" src="https://acornmedia.herokuapp.com/media/ptburnem-gypsyheartrock.mp3" />
+			</audio>
+			<figcaption id="demo6-audio-descript">
+				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
+			</figcaption>
+		</figure>			
+				
+<pre><code>&lt;link href=&quot;/path/to/themes/barebones/acorn.barebones.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
+<pre><code>jQuery('video').acornMediaPlayer({
+	theme: 'barebones',
+	nativeSliders: true
+});</code></pre>
+	</section>
+	
+	<section>
+		<h3>A word about the markup</h3>
+		<p>If you take a look at the source of these demos, you can see I'm using a Wikipedia-like style of marking-up both &lt;video&gt; and &lt;audio&gt;, using the HTML 5 elements &lt;figure&gt; and &lt;figcaption&gt;. </p>
+<pre><code>&lt;figure&gt;
+	&lt;video controls=&quot;controls&quot; width=&quot;826&quot; height=&quot;330&quot; poster=&quot;website/images/tos-poster.jpg&quot; preload=&quot;metadata&quot; aria-describedby=&quot;full-descript&quot;&gt;
+		&lt;source type=&quot;video/webm&quot; src=&quot;https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm&quot; /&gt;
+		&lt;source type=&quot;video/mp4&quot; src=&quot;https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4&quot; /&gt;
+		
+		&lt;track src=&quot;subs/TOS-arabic.srt&quot; kind=&quot;subtitles&quot; srclang=&quot;ar&quot; label=&quot;Arabic&quot; /&gt;
+		...
+		
+		You can download Tears of Steel at &lt;a href=&quot;http://mango.blender.org/&quot;&gt;mango.blender.org&lt;/a&gt;.
+	&lt;/video&gt;
+	&lt;figcaption id=&quot;full-descript&quot;&gt;
+		&lt;p&gt;&lt;em&gt;&quot;Tears of Steel&quot;&lt;/em&gt; was realized with crowd-funding by users of the open source 3D creation tool &lt;a href=&quot;http://www.blender.org&quot;&gt;Blender&lt;/a&gt;. Target was to improve and test a complete open and free pipeline for visual effects in film - and to make a compelling sci-fi film in Amsterdam, the Netherlands. &lt;/p&gt;
+		&lt;p&gt;(CC) Blender Foundation - &lt;a href=&quot;http://www.tearsofsteel.org&quot;&gt;http://www.tearsofsteel.org&lt;/a&gt;&lt;/p&gt;
+	&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+		<p>You can also notice I'm "linking" the &lt;figure&gt; and &lt;figcaption&gt; using <code>aria-describedby</code>. </p>
+		<p>Using the <code>aria-describedby</code> attribute makes screen readers and other <abbr title="Assistive technology">AT</abbr> read/interpret the media element description <strong>first</strong>, before reaching the controls. </p>
+		<p>This goes for both the &lt;audio&gt; and &lt;video&gt;, and is done for accessibility and semantic markup. </p>
+		<p>You don't <strong>have</strong> to use this markup. A simple video or audio element will do. </p>
+	</section>
+	
+	<footer>		
+		<p>Acorn Media Player is a project by <a href="http://www.ghinda.net">Ionut Cristian Colceriu</a>. </p>
+		<p>Tears of Steel is &copy; copyright the Blender Foundation | <a href="http://www.tearsofsteel.org">www.tearsofsteel.org</a>, licensed under a <a href="http://mango.blender.org/sharing/">Creative Commons</a> license. </p>
+	</footer>
+	
+	<script src="jquery/jquery.min.js"></script>
+	<script src="jquery/jquery-ui-1.10.0.custom.min.js"></script>
+	
+	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>	
+	
 	<!-- Call the plugin --> 
 	<script>
 		jQuery(function() {
@@ -44,300 +325,8 @@
 			});
 		});
 	</script>
-</head>
-<body>
-		
-
-	<h1>
-		Acorn Media Player
-		<p>jQuery Plugin</p>
-	</h1>
 	
-	<span class="version">Ver 1.6</span>
-	
-	<section>
-		<h2>Demos</h2>
-		
-		<h3>Defaults</h3>
-		
-		<figure>
-			<video controls="controls" width="826" height="352" id="demo1" preload="metadata" aria-describedby="full-descript">				
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.mp4" />
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.webm" />
-				
-				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
-				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
-				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
-				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
-				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
-				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
-				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
-				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
-				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
-				
-				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
-			</video>
-			<figcaption id="full-descript">
-<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
-<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
-			</figcaption>
-		</figure>
-		
-		<figure>
-			<audio id="demo1-audio" aria-describedby="demo1-audio-descript">
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.mp3" />
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.ogg" />
-			</audio>
-			<figcaption id="demo1-audiodescript">
-				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
-			</figcaption>
-		</figure>
-		
-		<p>This uses the default options, with the default 'access' theme. </p>
-		<p>Just include the theme CSS and call the plugin. </p>
-<pre><code>&lt;link href=&quot;/path/to/themes/access/acorn.access.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>
-
-<pre><code>jQuery('video').acornMediaPlayer();</code></pre>
-	</section>	
-	
-	<section>
-		<h3><code>accesslight </code> Child Theme</h3>
-		<figure>
-			<video controls="controls" width="826" height="352" id="demo2" preload="metadata" aria-describedby="demo2-description">
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.mp4" />
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.webm" />
-				
-				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
-				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
-				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
-				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
-				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
-				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
-				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
-				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
-				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
-				
-				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
-			</video>
-			<figcaption id="demo2-description">
-<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
-<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
-			</figcaption>
-		</figure>
-
-		<figure>		
-			<audio id="demo2-audio" aria-describedby="demo2-audio-descript">
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.mp3" />
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.ogg" />
-			</audio>
-			<figcaption id="demo2-audio-descript">
-				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
-			</figcaption>
-		</figure>		
-		
-		<p>Being a child theme of <code>access</code>, the styles for <code>accesslight</code> are included in the main theme's CSS. </p>
-<pre><code>&lt;link href=&quot;/path/to/themes/access/acorn.access.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>
-		<p>Now call the plugin with the <code>themes</code> option. </p>
-<pre><code>jQuery('video').acornMediaPlayer({
-	themes: 'access accesslight'
-});</code></pre>
-		
-	</section>
-	
-	<section>
-		<h3><code>Darkglass</code> theme and vertical volume slider</h3>
-		<figure>
-			<video controls="controls" width="826" height="352" id="demo3" preload="metadata" aria-describedby="demo3-description">
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.mp4" />
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.webm" />
-				
-				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
-				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
-				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
-				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
-				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
-				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
-				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
-				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
-				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
-				
-				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
-			</video>
-			<figcaption id="demo3-description">
-<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
-<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
-			</figcaption>
-		</figure>
-		
-		<figure>		
-			<audio id="demo3-audio" aria-describedby="demo3-audio-descript">
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.mp3" />
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.ogg" />
-			</audio>
-			<figcaption id="demo3-audio-descript">
-				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
-			</figcaption>
-		</figure>
-		
-		<p><code>darkglass</code> only works properly with vertical volume sliders. </p>
-<pre><code>&lt;link href=&quot;/path/to/themes/darkglass/acorn.darkglass.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
-<pre><code>jQuery('video').acornMediaPlayer({
-	theme: 'darkglass',
-	volumeSlider: 'vertical'
-});</code></pre>
-	</section>
-	
-	<section>
-		<h3><code>darkglasssmall</code> Child Theme</h3>
-		<figure>
-			<video controls="controls" width="826" height="352" id="demo4" preload="metadata" aria-describedby="demo4-description">
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.mp4" />
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.webm" />
-				
-				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
-				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
-				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
-				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
-				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
-				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
-				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
-				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
-				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
-				
-				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
-			</video>
-			<figcaption id="demo4-description">
-<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
-<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
-			</figcaption>
-		</figure>
-		
-		<figure>		
-			<audio id="demo4-audio" aria-describedby="demo4-audio-descript">
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.mp3" />
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.ogg" />
-			</audio>
-			<figcaption id="demo4-audio-descript">
-				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
-			</figcaption>
-		</figure>		
-				
-<pre><code>&lt;link href=&quot;/path/to/themes/darkglass/acorn.darkglass.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
-<pre><code>jQuery('video').acornMediaPlayer({
-	theme: 'darkglass darkglasssmall',
-	volumeSlider: 'vertical'
-});</code></pre>
-	</section>
-	
-	<section>
-		<h3><code>barebones</code> Theme</h3>
-		<figure>
-			<video controls="controls" width="826" height="352" id="demo5" preload="metadata" aria-describedby="demo5-description">
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.mp4" />
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.webm" />
-				
-				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
-				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
-				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
-				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
-				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
-				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
-				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
-				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
-				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
-				
-				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
-			</video>
-			<figcaption id="demo5-description">
-<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
-<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
-			</figcaption>
-		</figure>
-		
-		<figure>		
-			<audio id="demo5-audio" aria-describedby="demo5-audio-descript">
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.mp3" />
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.ogg" />
-			</audio>
-			<figcaption id="demo5-audio-descript">
-				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
-			</figcaption>
-		</figure>			
-				
-<pre><code>&lt;link href=&quot;/path/to/themes/barebones/acorn.barebones.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
-<pre><code>jQuery('video').acornMediaPlayer({
-	theme: 'barebones'
-});</code></pre>
-	</section>
-	
-	<section>
-		<h3><code>barebones</code> Theme with native sliders</h3>
-		<figure>
-			<video controls="controls" width="826" height="352" id="demo6" preload="metadata" aria-describedby="demo6-description">
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.mp4" />
-				<source src="https://acornmedia.herokuapp.com/media/Elephants_Dream_320.webm" />
-				
-				<track src="subs/afrikaans.srt" kind="subtitles" srclang="en" label="Afrikaans" />
-				<track src="subs/arabic.srt" kind="subtitles" srclang="de" label="Arabic" />
-				<track src="subs/brazilian.srt" kind="subtitles" srclang="es" label="Brazilian" />
-				<track src="subs/bulgarian.srt" kind="subtitles" srclang="fr" label="Bulgarian" />
-				<track src="subs/chinese.srt" kind="subtitles" srclang="it" label="Chinese" />
-				<track src="subs/french.srt" kind="subtitles" srclang="nl" label="French" />
-				<track src="subs/hungarian.srt" kind="subtitles" srclang="pl" label="Hungarian" />
-				<track src="subs/romanian.srt" kind="subtitles" srclang="pt" label="Romanian" />
-				<track src="subs/spanish.srt" kind="subtitles" srclang="pt" label="Spanish" />
-				
-				You can download Elephant's Dream at <a href="http://orange.blender.org/">orange.blender.org</a>.
-			</video>
-			<figcaption id="demo6-description">
-<p><em>Elephants Dream</em> is the world’s first open movie, made entirely with open source graphics software such as <a href="http://www.blender.org">Blender</a>, and with all production files freely available to use however you please, under a <a href="http://www.creativecommons.org">Creative Commons</a> license. </p>
-<p><a href="http://orange.blender.org/">orange.blender.org</a></p>
-			</figcaption>
-		</figure>
-		
-		<figure>		
-			<audio id="demo6-audio" aria-describedby="demo6-audio-descript">
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.mp3" />
-				<source src="https://acornmediaplayer.appspot.com/ptburnem-gypsyheartrock.ogg" />
-			</audio>
-			<figcaption id="demo6-audio-descript">
-				P.T.Burnem's track "Gypsy Heart Rock" from the "Paper Cranes" album.
-			</figcaption>
-		</figure>			
-				
-<pre><code>&lt;link href=&quot;/path/to/themes/barebones/acorn.barebones.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code></pre>		
-<pre><code>jQuery('video').acornMediaPlayer({
-	theme: 'barebones',
-	nativeSliders: true
-});</code></pre>
-	</section>
-	
-	<section>
-		<h3>A word about the markup</h3>
-		<p>If you take a look at the source of these demos, you can see I'm using a Wikipedia-like style of marking-up both &lt;video&gt; and &lt;audio&gt;, using the HTML 5 elements &lt;figure&gt; and &lt;figcaption&gt;. </p>
-<pre><code>&lt;figure&gt;
-	&lt;video controls=&quot;controls&quot; aria-describedby=&quot;demo-description&quot;&gt;
-		&lt;source src=&quot;../media/sintel-2010-full.webm&quot; /&gt;
-		You can download Sintel at &lt;a href=&quot;www.sintel.org&quot;&gt;www.sintel.org&lt;/a&gt;.
-	&lt;/video&gt;
-	&lt;figcaption id=&quot;demo-description&quot;&gt;
-		&lt;p&gt;&quot;Sintel&quot; is an independently produced short film... &lt;/p&gt;
-		&lt;p&gt;&lt;a href=&quot;www.sintel.org&quot;&gt;www.sintel.org&lt;/a&gt;&lt;/p&gt;
-	&lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre>
-		<p>You can also notice I'm "linking" the &lt;figure&gt; and &lt;figcaption&gt; using <code>aria-describedby</code>. </p>
-		<p>Using the <code>aria-describedby</code> attribute makes screen readers and other <abbr title="Assistive technology">AT</abbr> read/interpret the media element description <strong>first</strong>, before reaching the controls. </p>
-		<p>This goes for both the &lt;audio&gt; and &lt;video&gt;, and is done for accessibility and semantic markup. </p>
-		<p>You don't <strong>have</strong> to use this markup. A simple video or audio element will do. </p>
-	</section>
-	
-	<footer>		
-		<p>Acorn Media Player is a project by <a href="http://www.ghinda.net">Ionut Cristian Colceriu</a>. </p>
-		<p>Elephant's Dream is &copy; copyright the Blender Foundation | <a href="http://orange.blender.org/">orange.blender.org</a>, licensed under a <a href="http://orange.blender.org/blog/creative-commons-license-2/">Creative Commons</a> license. </p>
-	</footer>
-	
-<script>var _gaq=[['_setAccount','UA-19824700-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+	<script>var _gaq=[['_setAccount','UA-19824700-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 	
 </body>
 </html>
