@@ -79,6 +79,15 @@
 			var fullscreenMode; // The media is in fullscreen mode
 			var captionsActive; // Captions are active
 			
+			// check for autoplay attribute, to resolve Firefox/jQuery bug with autoplay video elements
+			// and disable the native autoplay
+			// http://bugs.jquery.com/ticket/9174
+			var autoplay = acorn.$self.attr('autoplay') ? true : false;
+				
+			// disable native autoplay
+			acorn.$self.attr('autoplay', false);
+			
+			
 			/* Define all the texts used
 			 * This makes it easier to maintain, make translations, etc.
 			*/
@@ -459,7 +468,7 @@
 					acorn.$self.bind('progress', showBuffer);
 				}
 				
-				// remove the loading element
+				// remove the loading class
 				$wrapper.removeClass('show-loading');
 				
 			};
@@ -973,11 +982,14 @@
 								}
 							}, 500);
 					
-					initCaption();					
+					initCaption();				
 				});
 			
 				// trigger update seek manualy for the first time, for iOS support
 				//updateSeek();
+				
+				// if an autoplay attribute was set, play the video
+				if(autoplay) acorn.$self.trigger('play');
 				
 				// remove the native controls
 				acorn.$self.removeAttr('controls');
