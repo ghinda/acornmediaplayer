@@ -66,7 +66,7 @@ Participate
 -----------
 Please report any issues you may have using the GitHub issue tracker, and I'll do my best to fix them asap. Also, feel free to fork the project, I'll be glad to add back any improvements.
 
-You can also email me directly at [cristian@ghinda.net](mailto:cristian@ghinda.net). 
+You can also email me directly at [contact@ghinda.net](mailto:contact@ghinda.net). 
 
 License
 -------
@@ -80,4 +80,4 @@ This keeps you, the developer, from being locked into a certain fallback method.
 
 Take a look at [Video for Everybody](http://camendesign.com/code/video_for_everybody). 
 
-Acorn Media Player is a project by [Ionut Cristian Colceriu](http://www.ghinda.net).
+Acorn Media Player is a project by [Ionut Colceriu](http://www.ghinda.net).
