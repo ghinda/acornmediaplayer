@@ -82,6 +82,7 @@
 	display: none;
 	position: absolute;
 	bottom: 75px;
+	z-index: 12;
 	width: 100%;
 	
 	text-align: center;

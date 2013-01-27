@@ -702,14 +702,19 @@
 			 * http://dev.opera.com/articles/view/accessible-html5-video-with-javascripted-captions/
 			 */
 			var updateCaption = function() {			
-				var now = acorn.$self[0].currentTime; // how soon is now?
-				var text = "";
-				for (var i = 0; i < captions.length; i++) {
+				// how soon is now?
+				var now = acorn.$self[0].currentTime,
+					text = '',
+					i,
+					captionsLength = captions.length;
+					
+				for (i = 0; i < captionsLength; i++) {
 					if (now >= captions[i].start && now <= captions[i].end) {
 						text = captions[i].content; // yes? then load it into a variable called text
 						break;
 					}
 				}
+				
 				acorn.$caption.html(text); // and put contents of text into caption div
 			};
 			
