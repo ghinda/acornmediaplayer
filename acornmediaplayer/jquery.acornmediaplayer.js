@@ -605,11 +605,15 @@
 			 */
 			var goFullscreen = function() {
 				if(fullscreenMode) {
-					if(acorn.$self[0].webkitSupportsFullscreen) {
-						acorn.$self[0].webkitExitFullScreen();
-					} else if(acorn.$self[0].mozRequestFullScreen) {
-							acorn.$self[0].mozRequestFullScreen();
+					// exit fullscreen
+					if(acorn.$self[0].cancelFullScreen) {
+						acorn.$self[0].cancelFullScreen();
+					} else if(acorn.$self[0].webkitCancelFullScreen) {
+						acorn.$self[0].webkitCancelFullScreen();
+					} else if(acorn.$self[0].mozCancelFullScreen) {
+							acorn.$self[0].mozCancelFullScreen();
 					} else {
+						// if no fullscreen api support, use full-page mode
 						$('body').css('overflow', 'auto');
 					
 						var w = acorn.$self.attr('data-width');
@@ -627,9 +631,14 @@
 					
 					fullscreenMode = false;
 					
-				} else {						
-					if(acorn.$self[0].webkitSupportsFullscreen) {
-						acorn.$self[0].webkitEnterFullScreen();
+				} else {
+					// enter fullscreen
+					if(acorn.$self[0].requestFullscreen) {
+						acorn.$self[0].requestFullscreen();
+					} else if(acorn.$self[0].webkitRequestFullscreen) {
+						acorn.$self[0].webkitRequestFullscreen();
+					} else if(acorn.$self[0].mozRequestFullScreen) {
+							acorn.$self[0].mozRequestFullScreen();
 					} else {
 						$('body').css('overflow', 'hidden');							
 					
