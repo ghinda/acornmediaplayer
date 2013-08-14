@@ -1,11 +1,10 @@
 /*
- * Acorn Media Player - jQuery plugin 1.7
+ * Acorn Media Player - jQuery plugin 1.8.1
  *
- * Copyright (C) 2012 Ionut Cristian Colceriu
+ * Copyright (C) 2013 Ionut Cristian Colceriu
  *
- * Dual licensed under the MIT and GPL licenses:
+ * Licensed under the MIT:
  *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
  *
  * www.ghinda.net
  * contact@ghinda.net
@@ -119,7 +118,7 @@
 			 * It makes more sense for screen reader users to first reach the actual <video> or <audio> elment and read of description of it,
 			 * than directly reach the Media Player controls, without knowing what they control.
 			 */
-			acorn.$self.attr('tabindex', '0');		
+			acorn.$self.attr('tabindex', '0');
 			
 			/*
 			 * Check if the main element has an ID attribute
@@ -277,7 +276,7 @@
 				if(!seeking) {
 					// Check type of sliders (Range <input> or jQuery UI)
 					if(options.nativeSliders) {
-						acorn.$seek.attr('value', currenttime);
+						acorn.$seek.val(currenttime);
 					} else {
 						acorn.$seek.slider('value', currenttime);
 					}
@@ -300,7 +299,7 @@
 				var m = Math.floor(sec/60)<10?"" + Math.floor(sec/60):Math.floor(sec/60);
 				var s = Math.floor(sec-(m*60))<10?"" + Math.floor(sec-(m*60)):Math.floor(sec-(m*60));
 				var formatedTime;
-									
+
 				var mins = 'minutes';
 				var secs = 'seconds';
 				
@@ -334,8 +333,8 @@
 			 * Triggered when the user starts to seek manually
 			 * Pauses the media during seek and changes the "currentTime" to the slider's value
 			 */
-			var startSeek = function(e, ui) {					
-				if(!acorn.$self.attr('paused')) {
+			var startSeek = function(e, ui) {
+				if(!acorn.$self.prop('paused')) {
 					wasPlaying = true;
 				}
 				acorn.$self.trigger('pause');
@@ -366,8 +365,8 @@
 				}
 				seeking = false;			
 				var sliderUI = $(ui.handle);
-				sliderUI.attr("aria-valuenow", parseInt(ui.value, 10));
-				sliderUI.attr("aria-valuetext", ariaTimeFormat(ui.value));
+				sliderUI.attr('aria-valuenow', parseInt(ui.value, 10));
+				sliderUI.attr('aria-valuetext', ariaTimeFormat(ui.value));
 			};
 			
 			/*
@@ -510,8 +509,8 @@
 				acorn.$self.prop('volume', volume);
 				
 				// set the ARIA attributes
-				acorn.$volume.$handle.attr("aria-valuenow", Math.round(volume*100));
-				acorn.$volume.$handle.attr("aria-valuetext", Math.round(volume*100) + ' percent');
+				acorn.$volume.$handle.attr('aria-valuenow', Math.round(volume*100));
+				acorn.$volume.$handle.attr('aria-valuetext', Math.round(volume*100) + ' percent');
 				// manually trigger the Blur event on the Caption Button
 				blurCaptionBtn();
 			};
@@ -914,7 +913,7 @@
 					if(options.captionsOn) {
 						loadCaption(firstCaption);
 						$('input[name=' + captionRadioName + ']', acorn.$container).removeAttr('checked');
-						$('input[name=' + captionRadioName + ']:eq(1)', acorn.$container).attr('checked', 'true');
+						$('input[name=' + captionRadioName + ']:eq(1)', acorn.$container).prop('checked', 'true');
 					};
 				} else if(acorn.$track.length) {
 					// if there's only one <track> element
