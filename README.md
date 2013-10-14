@@ -60,7 +60,8 @@ These are the themes included with the player:
 Contributors
 ------------
 
-* [Steve Oldham](https://github.com/stephenoldham)
+* https://github.com/stephenoldham
+* https://github.com/leslash
 
 License
 -------
