@@ -705,6 +705,8 @@
 
 				acorn.$transcriptBtn.removeClass(transcriptBtnActiveClass).hide();
 				acorn.$transcript.hide();
+
+				acorn.$captionBtn.removeClass(captionBtnActiveClass);
 			};
 
 			/*
@@ -924,12 +926,12 @@
 					var tracksrc = acorn.$track.attr('src');
 
 					acorn.$captionBtn.bind('click', function() {
-						if($(this).hasClass(captionBtnActiveClass)) {
+						if(acorn.$captionBtn.hasClass(captionBtnActiveClass)) {
 							captionOff();
 						} else {
 							loadCaption(tracksrc);
+							acorn.$captionBtn.addClass(captionBtnActiveClass);
 						}
-						$(this).toggleClass(captionBtnActiveClass);
 					});
 
 					// load default caption if captionsOn is true
