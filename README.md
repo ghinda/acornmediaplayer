@@ -3,7 +3,7 @@ Acorn Media Player - jQuery HTML5 media player
 
 Acorn Media Player is a HTML5 media player with a focus on accessibility and customization.
 
-Articles describing it's development on [Dev.Opera](http://dev.opera.com/):
+Articles describing its development on [Dev.Opera](http://dev.opera.com/):
 
 + [Building a custom HTML5 video player with CSS3 and jQuery](http://dev.opera.com/articles/view/custom-html5-video-player-with-css3-and-jquery/)
 + [A more accessible HTML5 <video> player](http://dev.opera.com/articles/view/more-accessible-html5-video-player/)
@@ -48,12 +48,13 @@ Themes
 ------
 
 These are the themes included with the player:
+
 * access(default theme)
   Includes child theme accesslight
-  
+
 * darkglass
   Includes child theme darkglasssmall
-  
+
 * barebones
 
 
