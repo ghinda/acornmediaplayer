@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Acorn Media Player, Accessible and customizable HTML5 media player</title>	
-	<link href="website/css/amp-page-base.css" rel="stylesheet" type="text/css" />	
-	
+	<title>Acorn Media Player, Accessible and customizable HTML5 media player</title>
+	<link href="website/css/amp-website.css" rel="stylesheet" type="text/css" />
+
 	<!-- Acorn Media Player specific -->
 	<link href="acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" type="text/css">
+
 	<!-- Theme -->
 	<link href="acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
 </head>
@@ -16,21 +17,25 @@
 		Acorn Media Player
 		<p>jQuery HTML5 media player</p>
 	</h1>
-	
-	<span class="version">ver 1.8.2</span>
-	
+
+	<nav>
+		<ul>
+			<li><a href="demos.html">Demos</a></li>
+		</ul>
+	</nav>
+
 	<section>
 		<figure>
 			<video controls="controls" width="826" height="360" poster="website/images/tos-poster.jpg" preload="metadata" aria-describedby="full-descript">
 				<source type="video/webm" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.webm" />
 				<source type="video/mp4" src="https://acornmedia.herokuapp.com/media/tears_of_steel_480.mp4" />
-				
+
 				<track src="subs/TOS-arabic.srt" kind="subtitles" srclang="ar" label="Arabic" />
 				<track src="subs/TOS-japanese.srt" kind="subtitles" srclang="jp" label="Japanese" />
 				<track src="subs/TOS-english.srt" kind="subtitles" srclang="en" label="English" />
 				<track src="subs/TOS-turkish.srt" kind="subtitles" srclang="tr" label="Turkish" />
 				<track src="subs/TOS-ukrainian.srt" kind="subtitles" srclang="uk" label="Ukrainian" />
-				
+
 				You can download Tears of Steel at <a href="http://mango.blender.org/">mango.blender.org</a>.
 			</video>
 			<figcaption id="full-descript">
@@ -39,18 +44,18 @@
 			</figcaption>
 		</figure>
 	</section>
-	
+
 	<section id="demos">
 		<a href="demos.html" id="demo-button">See more demos</a>
-		<h2>Demos</h2>		
+		<h2>Demos</h2>
 	</section>
-	
+
 	<section id="download">
 		<a href="https://github.com/ghinda/acornmediaplayer/zipball/gh-pages" id="download-button">Download</a>
 		<h2>Download</h2>
 		<p>You can download the latest version from <a href="https://github.com/ghinda/acornmediaplayer">GitHub</a>. </p>
 	</section>
-	
+
 	<section id="about">
 		<h2>About</h2>
 		<p>Acorn Media Player is a HTML5 media player with a focus on accessibility and customization. </p>
@@ -67,7 +72,7 @@
 		</ul>
 
 	</section>
-	
+
 	<section id="features">
 		<h2>Features</h2>
 		<ul>
@@ -99,15 +104,15 @@
 					<li>Free and Open Source</li>
 				</ul>
 			</li>
-		</ul>			
-	</section>	
-	
+		</ul>
+	</section>
+
 	<section id="how">
 		<h2>How to use</h2>
-		
+
 		<h3>1. Mark-up your &lt;audio&gt; and &lt;video&gt;</h3>
 		<p>Properly mark-up your videos, <em>and make sure they work, without the player. </em> It's also a good time to consider <a href="#fallback">fallbacks</a>. </p>
-		
+
 		<h3>2. Include jQuery and jQuery UI Slider</h3>
 		<p>Since this is a jQuery plugin, you'll need to include jQuery. You can include it from Google's CDN. </p>
 <pre><code>&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -115,7 +120,7 @@
 		<p>You don't have to include the whole jQuery UI, you'll only have to include the jQuery UI Slider component. You can <a href="#">create your own custom jQuery UI build</a> on the jQuery UI website.</p>
 <pre><code>&lt;script src=&quot;/path/to/jquery-ui-custom.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-		
+
 		<h3>3. Include specific JavaScript and CSS for Acorn Media Player</h3>
 		<p>You'll need to include one JavaScript file</p>
 <pre><code>&lt;script src=&quot;/path/to/jquery.acornmediaplayer.js&quot;&gt;&lt;/script&gt;
@@ -123,13 +128,13 @@
 		<p>and one CSS file</p>
 <pre><code>&lt;link href=&quot;/path/to/acornmediaplayer.base.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 </code></pre>
-		
+
 		<h3>4. Include the Theme(s)</h3>
 		<p>The <code>base</code> CSS file you just included does not provide any themes. Themes are located in other external CSS files. </p>
 <pre><code>&lt;link href=&quot;/path/to/themes/acorn.theme.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
 </code></pre>
 		<p>See the themes included by default in the <a href="#themes">Themes</a> section. </p>
-		
+
 		<h3>5. Call the plugin</h3>
 		<p>When you're done including everything, call the plugin on the elements you want using a jQuery selector. </p>
 <pre><code>&lt;script&gt;
@@ -140,7 +145,7 @@
 </code></pre>
 		<p>This will initialize the player using the default options. See the available options bellow. </p>
 	</section>
-	
+
 	<section id="options">
 		<h2>Options</h2>
 		<p>These are the themes included with the player: </p>
@@ -161,7 +166,7 @@
 							<p>You can also provide multiple values (just like adding multiple classes to an element). Some themes provide child themes, which build on, or modify the main theme. So, if you want to use 'accesslight', a child theme of 'access' you'll have to use 'access accesslight'. </p>
 							<p><strong>Remember to include the theme. </strong></p>
 						</td>
-					</tr>					
+					</tr>
 					<tr>
 						<td>nativeSliders</td>
 						<td>false</td>
@@ -197,7 +202,7 @@
 				</tbody>
 			</table>
 	</section>
-	
+
 	<section id="themes">
 		<h2>Themes</h2>
 		<p>These are the themes included with the player: </p>
@@ -215,57 +220,58 @@
 			</li>
 		</ul>
 	</section>
-	
-	<section id="contributors" class="column-50">
-		<h2>
-			Contributors 
-			<a href="https://github.com/ghinda/acornmediaplayer/graphs/contributors" class="contributors-link" target="_blank">See on Github</a>
-		</h2>
-		<ul>
-			<li>
-				<a href="https://github.com/stephenoldham">stephenoldham</a>
-			</li>
-			<li>
-				<a href="https://github.com/leslash">leslash</a>
-			</li>
-		</ul>
+
+	<section id="contributors" class="column-33">
+		<h2>Contributors</h2>
+		<a href="https://github.com/ghinda/acornmediaplayer/graphs/contributors" target="_blank">See on Github</a>
 	</section>
-	
-	<section id="participate" class="column-50">
+
+	<section id="participate" class="column-33">
 		<h2>Participate</h2>
 		<p>Please report any issues on <a href="https://github.com/ghinda/acornmediaplayer/issues?state=open">GitHub</a>. I'm very open to pull-requests. </p>
 	</section>
-	
-	<section id="license">
+
+	<section id="license" class="column-33">
 		<h2>License</h2>
 		<p>Acorn Media Player is licensed under the <a href="http://www.opensource.org/licenses/mit-license.html">MIT</a> license. </p>
-	</section>	
-	
-	<section id="fallback">
-		<h2>Fallback?</h2>
-		<p>Acorn Media Player does not provide any fallback for old browsers, or those that don't support the provided video format. </p>
-		<p>You can provide your own fallback using <a href="http://camendesign.com/code/video_for_everybody">Video for Everybody</a>. </p>
 	</section>
-				
+
+	<section id="fallback">
+		<h2>Fallback</h2>
+		<p>You can use the <a href="http://afarkas.github.io/webshim/demos/index.html">Webshim Polyfill</a> for supporting older browsers, and other cross-browser goodies. Thanks to <a href="https://github.com/aFarkas">aFarkas</a>!</p>
+
+		<p>Check the source, we'
+
+	</section>
+
 	<footer>
-		<p>See the <a href="demos.html">Acorn Media Player Demos</a> page. </p>
 		<p>Acorn Media Player is a project by <a href="http://www.ghinda.net">Ionuț Colceriu</a>. </p>
 		<p>Tears of Steel is &copy; copyright the Blender Foundation | <a href="http://www.tearsofsteel.org">www.tearsofsteel.org</a>, licensed under a <a href="http://mango.blender.org/sharing/">Creative Commons</a> license. </p>
 	</footer>
 
-	<script src="jquery/jquery.min.js"></script>
-	<script src="jquery/jquery-ui-1.10.0.custom.min.js"></script>
-	
-	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>	
-	
+	<!-- Required by Acorn Media Player -->
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/jquery-ui-1.10.0.custom.min.js"></script>
+
+	<!-- Optional - for older browser support - Webshim Polyfill -->
+	<script src="lib/modernizr.custom.js"></script>
+	<script src="//afarkas.github.io/webshim/demos/js-webshim/minified/polyfiller.js"></script>
+	<script>
+		if(window.webshims) {
+			webshims.polyfill('mediaelement');
+		}
+	</script>
+
+	<script src="acornmediaplayer/jquery.acornmediaplayer.js"></script>
+
 	<!-- Call the plugin -->
 	<script>
 		jQuery(function() {
 			jQuery('video, audio').acornMediaPlayer();
 		});
 	</script>
-		
+
 	<script>var _gaq=[['_setAccount','UA-19824700-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
-	
+
 </body>
 </html>

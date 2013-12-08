@@ -1,5 +1,5 @@
 /*
- * Acorn Media Player - jQuery plugin 1.8.2
+ * Acorn Media Player - jQuery plugin
  *
  * Copyright (C) 2013 Ionut Cristian Colceriu
  *
@@ -39,17 +39,17 @@
 	display: none;
 }
 /* Captions and Transcript */
-.acorn-transcript {	
+.acorn-transcript {
 	clear: both;
 	display: none;
-	
+
 	overflow: auto;
 	height: 15em;
 }
 .acorn-transcript-button {
 	display: none;
 }
-/* 
+/*
  * Show the timings in square brackets before each "subtitle" in the transcript.
  * Borrowed and adapted from Bruce Lawson's “Accessible HTML5 Video with JavaScripted captions”
  * http://dev.opera.com/articles/view/accessible-html5-video-with-javascripted-captions/
@@ -59,14 +59,14 @@
 	float: left;
 	width: 100%;
 	line-height: 1.5em;
-	
+
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
 .acorn-transcript span:hover {
 	background-color: #cadde7 !important;
-	
+
 	font-weight: bold;
 }
 .acorn-transcript span:nth-of-type(even) {
@@ -77,7 +77,7 @@
 	float: left;
 	content: " [" attr(data-begin) "s-" attr(data-end)"s]   ";
 	width: 15%;
-	padding: 0.2em 1.5em 0.2em 0.2em;	
+	padding: 0.2em 1.5em 0.2em 0.2em;
 }
 .acorn-caption {
 	display: none;
@@ -85,7 +85,7 @@
 	bottom: 75px;
 	z-index: 12;
 	width: 100%;
-	
+
 	text-align: center;
 }
 .acorn-caption-button {
@@ -99,23 +99,23 @@
 	height: 75px;
 	margin-bottom: 10px;
 	overflow: auto;
-	
+
 	background-color: #000;
 	border: 3px solid #fff;
 
 	z-index: 3;
-	
+
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	
+
 	-moz-box-shadow: 0px 1px 5px #000;
 	-webkit-box-shadow: 0px 1px 5px #000;
 	box-shadow: 0px 1px 5px #000;
 }
 .acorn-caption-selector label {
 	display: block;
-	
+
 	font-weight: bold;
 	color: #fff;
 }
@@ -145,22 +145,22 @@
 }
 .loading-media {
 	visibility: hidden;
-	
+
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	z-index: 11; 
+	z-index: 11;
 	width: 20px;
 	height: 20px;
 	margin-top: -10px;
 	margin-left: -10px;
-	
+
 	background-color: #000;
 	border: 5px solid #fff;
 	border-top: 5px solid rgba(0,0,0,0);
 	border-left: 5px solid rgba(0,0,0,0);
 	border-radius: 20px;
-	
+
 	animation: spin 1s infinite linear;
 	-o-animation: spin 1s infinite linear;
 	-moz-animation: spin 1s infinite linear;
@@ -198,7 +198,7 @@
 	z-index: 10;
 	width: 100%;
 	height: 100%;
-	
+
 	background: #000;
 	opacity: 0.9;
 }

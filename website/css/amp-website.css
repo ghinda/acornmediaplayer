@@ -1,0 +1,254 @@
+/*
+ * Acorn Media Player - jQuery plugin
+ * Styles for main web page
+ *
+ * 2013 Cristian I. Colceriu
+ */
+
+/* general */
+header, nav, footer, section, aside, article, figure, figcaption {display: block;}
+::-moz-selection {background-color: #aab; color: #eee; text-shadow: none;}
+::selection {background-color: #aab; color: #eee; text-shadow: none;}
+table { border-collapse: collapse; border-spacing: 0; }
+
+a, a:link {
+	position: relative;
+	color: #FFD000;
+}
+a:focus, a:hover {
+	background-color: #FFD000;
+	color: #000;
+}
+a:active {
+	top: 1px;
+}
+/* main */
+html {
+	background-color: #160D00;
+
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	position: relative;
+	width: 840px;
+	margin: 0 auto;
+	padding: 0;
+
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #E8CBA2;
+}
+section {
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+h1, h2, h3, h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-shadow: 0px 2px 1px #000;
+	color: #fff;
+}
+h1 p {
+	font-size: 50%;
+	margin: 0px;
+
+	color: #BA8335;
+}
+
+nav {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+	color: #BA8335;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav li {
+	padding: 0;
+	margin: 0;
+}
+
+nav a {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+footer {
+	margin-top: 20px;
+
+	color: #B58F5A;
+	font-size: 80%;
+	line-height: 1em;
+}
+figure {
+	clear: both;
+	margin: 0;
+}
+figcaption {
+	clear: both;
+	padding: 10px;
+
+	color: #D8C5AB;
+	font-size: 90%;
+}
+
+.column-33 {
+	display: inline-block;
+	width: 33%;
+	vertical-align: top;
+}
+
+.column-50 {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
+
+/* features section */
+#features h2 {
+	margin-bottom: 0px;
+}
+#features>ul {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#features>ul>li {
+	float: left;
+	width: 22%;
+	padding-right: 3%;
+	list-style-type: none;
+}
+#features>ul>li ul {
+	margin: 0px;
+	padding-left: 1em;
+}
+#features h3 {
+	color: #FF9400;
+	line-height: 2.2em;
+}
+.access-icon {
+	background: url(../images/access-icon.png) no-repeat right center;
+}
+.caption-icon {
+	background: url(../images/caption-icon.png) no-repeat right center;
+}
+.transcript-icon {
+	background: url(../images/transcript-icon.png) no-repeat right center;
+}
+.fullscreen-icon {
+	background: url(../images/fullscreen-icon.png) no-repeat right center;
+}
+/* download section */
+#download {
+	overflow: hidden;
+	padding: 10px;
+	background-color: #663900;
+}
+#download h2, #download p {
+	margin: 0px;
+}
+#download #download-button {
+	float: right;
+	padding: 10px 20px;
+	background-color: #D87700;
+	border: 0px solid #fff;
+
+	box-shadow: 0px -1px 0px #FFA332, 0px 0px 5px #000;
+	border-radius: 10px;
+	text-shadow: 0px -1px 0px #000;
+
+	text-decoration: none;
+	font-size: 18px;
+	color: #fff;
+}
+#download #download-button:hover {
+	background-color: #FF8C00;
+}
+/* demo section */
+#demos {
+	padding: 5px;
+	overflow: hidden;
+	background-color: #2B1700;
+}
+#demos h2 {
+	margin: 10px;
+}
+#demos #demo-button {
+	float: right;
+	margin: 10px;
+	padding: 5px 10px;
+	background-color: #D87700;
+	border: 0px solid #fff;
+
+	box-shadow: 0px -1px 0px #FFA332, 0px 0px 5px #000;
+	border-radius: 10px;
+	text-shadow: 0px -1px 0px #000;
+
+	text-decoration: none;
+	font-size: 14px;
+	color: #fff;
+}
+#demos #demo-button:hover {
+	background-color: #FF8C00;
+}
+/* howto section */
+#how h3 {
+	margin-top: 30px;
+	padding: 5px;
+	border-top: 1px solid #683C00;
+	border-bottom: 1px solid #683C00;
+	background-color: #472900;
+
+	text-shadow: none;
+}
+pre {
+	padding: 10px;
+	overflow: auto;
+	background-color: #333;
+
+	color: #fff;
+}
+/* options */
+#options table {
+}
+
+#options table th {
+	border: 1px solid #683C00;
+	background: #894E00;
+	color: #FFFFFF;
+	font-weight: normal;
+	padding: 5px 10px;
+	text-align:left;
+}
+
+#options table td {
+	padding: 5px 10px;
+	border: 1px solid #683C00;
+}
+
+#options table tr:nth-of-type(2n) {
+	background: #2D1A00;
+}
+
+#options table .small-column {
+	width: 90px;
+}
+/* media player styles */
+.acorn-transcript {
+	font-size: 90%;
+}
+.acorn-transcript span:nth-of-type(2n) {
+	background-color: #000 !important;
+}
+.acorn-transcript span:hover {
+	color: #000;
+}

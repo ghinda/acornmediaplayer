@@ -1,5 +1,5 @@
 /*
- * Acorn Media Player - jQuery plugin 1.8.2
+ * Acorn Media Player - jQuery plugin
  *
  * Copyright (C) 2013 Ionut Cristian Colceriu
  *
@@ -937,11 +937,11 @@
 			var init = function() {
 				// attach playback handlers
 				acorn.$playBtn.bind( (is_touch_device) ? 'touchstart' : 'click', playMedia);
-				
+
 				if (document.createElement('video').canPlayType) {
 					acorn.$self.bind((is_touch_device) ? 'touchstart' : 'click', playMedia);
 				}
-				
+
 				acorn.$self.bind('play', startPlayback);
 				acorn.$self.bind('pause', stopPlayback);
 				acorn.$self.bind('ended', stopPlayback);
@@ -994,11 +994,11 @@
 					 */
 					acorn.$container.addClass('audio-player');
 				}
-				
+
 				if($.fn.updatePolyfill){
 					$wrapper.updatePolyfill();
 				}
-				
+
 				// if an autoplay attribute was set, play the video
 				if(autoplay) acorn.$self.trigger('play');
 			}();
