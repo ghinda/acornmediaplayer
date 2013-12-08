@@ -125,12 +125,14 @@
 	padding: 0px;
 }
 /* Fullscreen Mode */
-.fullscreen-video {
+.fullscreen-video,
+.has-fullscreen-video .polyfill-mediaelement {
 	position: fixed !important;
 	top: 0px;
 	left: 0px;
 	z-index: 99999 !important;
-	
+	width: 100% !important;
+	height: 100% !important;
 	background-color: #000;
 }
 .acorn-controls.fullscreen-controls {
