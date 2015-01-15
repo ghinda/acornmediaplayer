@@ -1,4 +1,4 @@
-Acorn Media Player - jQuery HTML5 media player
+Acorn Media Player - jQuery HTML5 media player[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=ghinda&url=https://github.com/ghinda/acornmediaplayer&title=acorn-media-player&language=javascript&tags=github&category=software)
 ==============================================
 
 Acorn Media Player is a HTML5 media player with a focus on accessibility and customization.
